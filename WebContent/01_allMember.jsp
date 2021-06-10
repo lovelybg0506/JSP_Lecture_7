@@ -37,7 +37,7 @@
 		stmt = conn.createStatement(); // Statement 연결
 		rs = stmt.executeQuery(sql);
 		/* while(rs.next()){
-			out.println("<tr>");//oracle에서 가져온 data를 표현하는 방법
+			out.println("<tr>");//oracle에서 가져온 data를 표현하는 방법,
 			out.println("<td>"+rs.getString("name")+"</td>");			
 			out.println("<td>"+rs.getString("userid")+"</td>");			
 			out.println("<td>"+rs.getString("pwd")+"</td>");			
