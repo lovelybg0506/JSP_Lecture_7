@@ -13,6 +13,8 @@
 	String uid="scott";
 	String pass="tiger";
 	String sql="select * from member";
+	String sql2="insert into member values('강현승','liver2','1234','liver@naver.com','010-3333-3232',0)";
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -35,8 +37,9 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver"); // 오라클 드라이버 로딩
 		conn = DriverManager.getConnection(url,uid,pass); // 연결 준비됨
 		stmt = conn.createStatement(); // Statement 연결
+		stmt.executeUpdate(sql2);
 		rs = stmt.executeQuery(sql);
-		/* while(rs.next()){
+		 while(rs.next()){
 			out.println("<tr>");//oracle에서 가져온 data를 표현하는 방법,
 			out.println("<td>"+rs.getString("name")+"</td>");			
 			out.println("<td>"+rs.getString("userid")+"</td>");			
@@ -45,8 +48,8 @@
 			out.println("<td>"+rs.getString("phone")+"</td>");			
 			out.println("<td>"+rs.getString("admin")+"</td>");			
 			out.println("</tr>");
-		} */
-			while(rs.next()){
+		}
+		/* 	while(rs.next()){
 				String name=rs.getString("name");
 				String userid=rs.getString("userid");
 				String pwd=rs.getString("pwd");
@@ -55,7 +58,8 @@
 				String admin=rs.getString("admin");
 				
 				out.println("이름 : "+name+", 아이디 : "+userid+", 비밀번호 : "+pwd+", email : "+email+", 전화번호 : "+phone+", 권한 : "+admin+"<br>");
-			}
+			} */
+		
 	}catch(Exception e){
 		e.printStackTrace();
 	}finally{
